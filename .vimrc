@@ -5,7 +5,7 @@ set nocompatible
 set t_Co=256
 set background=dark
 syntax on
-colorscheme badwolf
+colorscheme darkburn 
 
 " Enabled later, after Pathogen
 filetype off
@@ -227,7 +227,7 @@ set relativenumber " Use relative line numbers. Current line is still in status 
 au BufReadPost,BufNewFile * set relativenumber
 
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
-call pathogen#runtime_append_all_bundles()
+call pathogen#incubate()
 filetype plugin indent on
 
 " JSON
@@ -313,4 +313,26 @@ inoremap <leader>j <Esc>ji
 "
 "imap <leader>s <Esc>:w<CR>
 
+" Mappings to access buffers (don't use "\p" because a
+" delay before pressing "p" would accidentally paste).
+" \l       : list buffers
+" \b \f \g : go back/forward/last-used
+" \1 \2 \3 : go to buffer 1/2/3 etc
+nnoremap <Leader>l :ls<CR>
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>g :e#<CR>
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
+nnoremap <Leader>c :bd<CR>
+" It's useful to show the buffer number in the status line.
+set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
