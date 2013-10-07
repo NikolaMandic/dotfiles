@@ -262,8 +262,10 @@ let g:vimclojure#FuzzyIndent = 1 " Names beginning in 'def' or 'with' to be inde
 
 " Rainbow Parenthesis
 nnoremap <leader>rp :RainbowParenthesesToggle<CR>
-"vmap <C-y> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
-"nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
+"vmap <C-c> :<Esc>`>a<CR><Esc>mx`<i<CR><Esc>my'xk$v'y!xclip -selection c<CR>u
+
+vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
+nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 "imap <C-v> <Esc><C-v>a
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -288,7 +290,7 @@ map <C-x> :NERDTreeToggle<CR>
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd vimenter * NERDTree
 "noremap! <c-w> <Esc>:tabclose<CR>
-"set clipboard=unnamed
+set clipboard=unnamed
 "nnoremap <c-w> <Esc>:tabclose<CR>
 "inoremap <c-w> <Esc>:tabclose<CR>
 "vnoremap  <c-w> <Esc>:tabclose<CR>
