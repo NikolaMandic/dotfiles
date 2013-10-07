@@ -288,7 +288,7 @@ map <C-x> :NERDTreeToggle<CR>
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd vimenter * NERDTree
 "noremap! <c-w> <Esc>:tabclose<CR>
-set clipboard=unnamed
+"set clipboard=unnamed
 "nnoremap <c-w> <Esc>:tabclose<CR>
 "inoremap <c-w> <Esc>:tabclose<CR>
 "vnoremap  <c-w> <Esc>:tabclose<CR>
