@@ -303,7 +303,7 @@ inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
 imap <C-@> <C-Space>
 "imap <C-M> <Esc>:!php %<CR>
 map <C-M> <Esc>:!php %<CR>
-inoremap <leader>j <Esc>ji
+"inoremap <leader>j <Esc>ji
 "inoremap <c-h> <Esc>hi
 " inoremap <c-k> <Esc>ki
 "inoremap <c-l> <Esc>li
@@ -320,6 +320,7 @@ inoremap <leader>j <Esc>ji
 " \l       : list buffers
 " \b \f \g : go back/forward/last-used
 " \1 \2 \3 : go to buffer 1/2/3 etc
+let g:syntastic_javascript_checkers = ['jshint'] 
 nnoremap <Leader>l :ls<CR>
 nnoremap <Leader>b :bp<CR>
 nnoremap <Leader>f :bn<CR>
@@ -342,4 +343,7 @@ set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 autocmd QuickFixCmdPost * nested cwindow | redraw!
 autocmd BufWritePost *.coffee silent make!
 :set autoread
-vmap <Leader>c :CoffeeCompile vert<CR>
+let coffee_run_vert = 1
+vmap <Leader>c :CoffeeCompile vert cwindow<CR>
+vmap <leader>r :CoffeeRun <CR>
+nnoremap <leader>r :CoffeeRun <CR>
