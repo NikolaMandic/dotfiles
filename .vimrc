@@ -133,7 +133,7 @@ imap aa λ
 " Toggle show tabs and trailing spaces (,c)
 set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
 set fcs=fold:-
-nnoremap <silent> <leader>c :set nolist!<CR>
+nnoremap <silent> <leader>t :set nolist!<CR>
 
 " Clear last search (,qs)
 map <silent> <leader>qs <Esc>:noh<CR>
@@ -339,4 +339,7 @@ nnoremap <Leader>v "+p
 nnoremap <Leader>. "+
 " It's useful to show the buffer number in the status line.
 set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-
+autocmd QuickFixCmdPost * nested cwindow | redraw!
+autocmd BufWritePost *.coffee silent make!
+:set autoread
+vmap <Leader>c :CoffeeCompile vert<CR>
