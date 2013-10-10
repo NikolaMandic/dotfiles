@@ -21,6 +21,8 @@ git clone git://github.com/altercation/vim-colors-solarized.git
 git clone https://github.com/Shougo/neocomplcache.vim
 git clone https://github.com/airblade/vim-gitgutter
 git clone https://github.com/fholgado/minibufexpl.vim
+git clone https://github.com/kchmck/vim-coffee-script.git ~/.vim/bundle/vim-coffee-script/
+git clone https://github.com/scrooloose/syntastic.git
 sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
 sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
 sudo apt-get update
