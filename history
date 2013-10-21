@@ -1,0 +1,51 @@
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install gcc-arm-linux-gnueabi
+sudo apt-get install qemu-user-static
+sudo apt-get install gdb-multiarch
+sudo apt-get install git
+sudo apt-get install nodejs
+sudo apt-get install vim-gtk
+cd .vim/bundle/
+mkdir -p ~/.vim/autoload ~/.vim/bundle; curl -Sso ~/.vim/autoload/pathogen.vim     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+sudo apt-get install curl
+mkdir -p ~/.vim/autoload ~/.vim/bundle; curl -Sso ~/.vim/autoload/pathogen.vim     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+cd .vim/bundle/
+git clone https://github.com/scrooloose/nerdtree.git
+git clone https://github.com/Shutnik/jshint2.vim
+git clone https://github.com/Lokaltog/vim-easymotion
+git clone https://github.com/pangloss/vim-javascript.git
+git clone https://github.com/chrisbra/histwin.vim
+git clone https://github.com/msanders/snipmate.vim
+git clone git://github.com/altercation/vim-colors-solarized.git
+git clone https://github.com/Shougo/neocomplcache.vim
+git clone https://github.com/airblade/vim-gitgutter
+git clone https://github.com/fholgado/minibufexpl.vim
+git clone https://github.com/kchmck/vim-coffee-script.git ~/.vim/bundle/vim-coffee-script/
+git clone https://github.com/scrooloose/syntastic.git
+sudo sh -c 'echo "deb http://deb.opera.com/opera/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
+sudo sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -'
+sudo apt-get update
+sudo apt-get install opera
+git clone https://github.com/NikolaMandic/scripts
+cp scripts/.vimrc ./
+cp scripts/.bashrc ./
+cp ./scripts/.vim/colors/* ~/.vim/colors
+cp -R ./scripts/.vim/colors ~/.vim/
+git clone https://github.com/NikolaMandic/diskotek
+git clone https://github.com/NikolaMandic/beeScript
+sudo apt-get install xclip
+sudo npm -g install bower
+sudo npm install -g grunt
+sudo npm install -g grunt-cli
+sudo apt-get install ruby
+sudo gem install compass
+git clone https://github.com/NikolaMandic/nikolamandic.github.io.git
+git clone git://github.com/imathis/octopress.git octopress
+sudo npm -g install express
+npm install lodash
+sudo npm -g install socket.io
+sudo apt-get install git-gui
+sudo apt-get install gitk
+ccccc
