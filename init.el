@@ -1,16 +1,16 @@
+(setq cabbage-repository (expand-file-name "/home/nm/.cabbage/"))
+(load (concat cabbage-repository "cabbage"))
 
-
-(add-to-list 'load-path "~/.emacs.d")
 (require 'package)
 (add-to-list 'package-archives
-'("marmelade" . "http://marmalade-repo.org/packages/"))
+             '("melpa" . "http://melpa.milkbox.net/packages/") )
+(add-to-list 'package-archives
+             '("marmelade" . "http://marmalade-repo.org/packages/"))
+(package-refresh-contents)
 (package-initialize)
-(defvar my-packages '(clojure-mode
-clojure-test-mode
-cider))
 (defvar my-packages '(starter-kit
                       starter-kit-lisp
-                                         
+
                       clojure-mode
                       clojure-test-mode
                       cider))
@@ -18,8 +18,19 @@ cider))
 (dolist (p my-packages)
 ( when (not (package-installed-p p ))
 (package-install p)))
-(windmove-default-keybindings)
-(setq windmove-wrap-around t)
+(defun append-to-buffer ()
+       "Append the text of the region to BUFFER."
+       (interactive)
+       (let ((oldbuf (current-buffer))
+         (p1 (line-beginning-position))
+         (p2 (line-end-position)))
+
+           (set-buffer (get-buffer-create "*IEX*"))
+           (insert-buffer-substring oldbuf p1 p2))
+       (switch-to-buffer-other-window "*IEX*")
+       )
+(global-set-key (kbd "M-`") 'append-to-buffer)
+
 
 (defun cider-eval-expression-at-point-in-repl ()
   (interactive)
