@@ -16,7 +16,7 @@
     '(python-environment deferred epc
         flycheck ctable jedi concurrent company cyberpunk-theme elpy
         yasnippet pyvenv highlight-indentation find-file-in-project
-        sql-indent sql exec-path-from-shell iedit clojure-mode
+        sql-indent sql exec-path-from-shell iedit clojure-mode ace-jump-mode
         auto-complete popup let-alist   fiplr neotree cider
          minimap popup))
 
@@ -53,4 +53,6 @@
     (insert form)
     (cider-repl-return)))
 (global-set-key (kbd "C-`") 'cider-eval-expression-at-point-in-repl)
+
+    (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
